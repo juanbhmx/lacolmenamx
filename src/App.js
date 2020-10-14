@@ -7,7 +7,9 @@ import CartPrice from './components/CartPrice';
 import Home from './components/content';
 import NosotrosL from './components/nosotros';
 import Booking from './components/contacto';
+import Acerca from './components/acerca';
 import { Nosotros } from './pages';
+import Cart from './components/Cart';
 import {
   BrowserRouter as Router,
   Switch,
@@ -101,6 +103,7 @@ class App extends React.Component
                         </Switch>
                       </li>
                       <li><a href="/CartPrice"><i class="fa fa-shopping-cart"></i> Carrito</a></li>
+                      
                       <li>
                         <hr/>
                         <Switch >
@@ -152,6 +155,7 @@ class App extends React.Component
                       </li> 
                       <li class="dropdown"><a href="/nosotros">Nosotros</a></li> 
                       <li><a href="/contacto">Contacto</a></li>
+                      <li><a href="/acerca">Acerca de</a></li> 
                     </ul>
                   </div>
                 </div>
@@ -160,6 +164,9 @@ class App extends React.Component
                     <input type="text" placeholder="Productos"/>
                   </div>
                 </div>
+                <Route path="/acerca" component={Acerca}>
+                            <Acerca/>
+                          </Route>
               </div>
             </div>
           </div>
@@ -176,7 +183,12 @@ class App extends React.Component
                           <Route path="/nosotros" component={NosotrosL}>
                             <NosotrosL/>
                           </Route>
+                          
                         </Switch>
+                        
+                        
+                          
+
   {/*         
         <section id="slider">
           <div class="container">
@@ -329,6 +341,7 @@ class App extends React.Component
             </div>
           </div>
         */}
+        
           <div class="footer-widget">
             <div class="container">
               <div class="row">

@@ -1,10 +1,16 @@
 import React from 'react';
-
+import Cart from '../Cart/';
 import '../login/style.scss';
 import {
 
     MDBBtn
   } from "mdbreact";
+  import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 
 const CartPrice = props => {
 
@@ -32,7 +38,8 @@ const CartPrice = props => {
                     </div>
                     <div className="text-center mt-4">
                 <MDBBtn color="deep-orange" className="mb-3" type="submit">
-                  Pagar
+                <Link to="/cart"><i className="fas fa-shopping-cart">Pagar</i>({props.cartCount})</Link>
+                  
                 </MDBBtn>
               </div>
                 </div>

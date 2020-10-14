@@ -96,5 +96,5 @@ return (
     };
 
 
-import React from "react";
+export default acerca;
 

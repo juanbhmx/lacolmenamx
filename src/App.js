@@ -8,6 +8,7 @@ import Home from './components/content';
 import NosotrosL from './components/nosotros';
 import Booking from './components/contacto';
 import Acerca from './components/acerca';
+
 import { Nosotros } from './pages';
 import Cart from './components/Cart';
 import {
@@ -155,7 +156,7 @@ class App extends React.Component
                       </li> 
                       <li class="dropdown"><a href="/nosotros">Nosotros</a></li> 
                       <li><a href="/contacto">Contacto</a></li>
-                      <li><a href="/acerca">Acerca de</a></li> 
+                      <li><a href="/acerca">Acerca de:</a></li> 
                     </ul>
                   </div>
                 </div>

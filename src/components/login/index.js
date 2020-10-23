@@ -7,17 +7,20 @@ import {
     Route,
     Link
   } from "react-router-dom";
-  
+import FPass from '../ForgetPassword'
 import './style.scss'
 import signup from '../signup/register';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from 'mdbreact';
+
 
 export class Login extends React.Component{
     constructor(props){
             super(props);
         }
         render(){
-            return <div className="base-container" ref={this.props.containerRef}>
+            return(
+            <Switch>
+             <div className="base-container" ref={this.props.containerRef}>
                 <div className="header">Login</div>
                 <div className="content">
                     {/*<div className="image">
@@ -38,11 +41,17 @@ export class Login extends React.Component{
                     </form>
                 </div>
                 <div style={{display: 'flex', justifyContent: 'space-between'}}>
+
+               
+                    <Route>
+                    <Link to="/ForgetPassword">Olvidaste tu contraseña?</Link>
+                    </Route>
                     
-                    <Link to="/forget-password">Olvidaste tu contraseña?</Link>
-                </div><Route exact path='/' component={Home} />
+                </div>
             </div>
-            
+            </Switch>
+            )
         }
     }
+    
     export default Login;

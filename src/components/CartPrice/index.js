@@ -1,5 +1,5 @@
 import React from 'react';
-import Cart from '../Cart/';
+import Checkout from '../checkout';
 import '../login/style.scss';
 import {
 
@@ -38,8 +38,9 @@ const CartPrice = props => {
                     </div>
                     <div className="text-center mt-4">
                 <MDBBtn color="deep-orange" className="mb-3" type="submit">
-                <Link to="/cart"><i className="fas fa-shopping-cart">Pagar</i>({props.cartCount})</Link>
-                  
+                <Route>
+                <Link to="/checkout"><i className="fas fa-shopping-cart">Pagar</i>({props.cartCount})</Link>
+                </Route>
                 </MDBBtn>
               </div>
                 </div>
@@ -57,4 +58,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default CartPrice
+export default CartPrice;

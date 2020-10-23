@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './style.css';
 import CartItem from './CartItem';
 
+
+
 import CartPrice from '../../components/CartPrice';
 
 class Cart extends Component{
@@ -64,7 +66,7 @@ class Cart extends Component{
         // this.updateCart(productId, parseInt(e.target.value));
     }
 
-    componentDidMount() {
+  /* componentDidMount() {
         if(!this.props.auth.isAuthenticated){
             this.props.getToken()
             .then(result => {
@@ -92,7 +94,7 @@ class Cart extends Component{
                 cartItems: this.props.cart.cartItem
             })
         }
-    }
+    } */
 
     render (){
 
@@ -104,7 +106,7 @@ class Cart extends Component{
                         <div className="CartDetails">
                             {/* List cart items */}
                             <div className="CardTitle">
-                                <h3>My Cart</h3>
+                                <h3>Mi Carrito</h3>
                             </div>
                             <div className="CardBody">
 
@@ -127,7 +129,7 @@ class Cart extends Component{
                                 
 
                                 <div className="PlaceOrder">
-                                    <button className="PlaceOrderButton" onClick={() => this.props.history.push('/place-order')}>Place Order</button>
+                                    <button className="PlaceOrderButton" onClick={() => this.props.history.push('/PlaceOrder')}>Realizar Pedido</button>
                                 </div>
 
                             </div>

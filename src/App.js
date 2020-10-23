@@ -1,22 +1,27 @@
 import React, {Component} from 'react';
 import logo from './login.svg';
+import FPass from './components/ForgetPassword'
 import './App.css';
 import Login from './components/login/';
 import Register from './components/signup';
-import CartPrice from './components/CartPrice';
+import CartPrice from './components/Cart';
 import Home from './components/content';
 import NosotrosL from './components/nosotros';
 import Booking from './components/contacto';
 import Acerca from './components/acerca';
-
+import Congra from './components/congratulation'
 import { Nosotros } from './pages';
-import Cart from './components/Cart';
+import Cart from './components/CartPrice';
+import PlaceOrder from './components/PlaceOrder';
+import UpUs from './components/updateuser'
+import HPay from './components/historialpay';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
+import Check from './components/checkout';
 
 
 
@@ -93,25 +98,30 @@ class App extends React.Component
                 <div class="col-sm-8">
                   <div class="shop-menu pull-right">
                     <ul class="nav navbar-nav">
-                      <li><a href="/login"><i class="fa fa-user"></i> Iniciar Sesion</a></li>
+                      <li><a href="/login"><i class="fa fa-user"></i> Iniciar Sesion </a></li>
                       <li>
                         <hr/>
                         <Switch class="row">
                           
                           <Route path="/login" component={Login}>
+                          
                             <Login/>
                           </Route>
+                          
                         </Switch>
                       </li>
-                      <li><a href="/CartPrice"><i class="fa fa-shopping-cart"></i> Carrito</a></li>
-                      
+                      <li><a href="/cart"><i class="fa fa-shopping-cart"></i> Carrito</a></li>
                       <li>
                         <hr/>
-                        <Switch >
-                          <Route path="/CartPrice" component={CartPrice}>
-                            <CartPrice/>
+                      <Switch >
+                          <Route path="/cart" component={Cart} >
+                            <Cart/>
                           </Route>
-                        </Switch>
+                      </Switch>
+                      </li>
+                      <li>
+                        <hr/>
+                       
                       </li>
                       <li><a href="/register" ><i class="fa fa-lock"></i> Registrarme</a></li>
                       <li>
@@ -157,6 +167,13 @@ class App extends React.Component
                       <li class="dropdown"><a href="/nosotros">Nosotros</a></li> 
                       <li><a href="/contacto">Contacto</a></li>
                       <li><a href="/acerca">Acerca de:</a></li> 
+                      <li class="/"><a href="/">Cuenta<i class="fa fa-angle-down"></i></a>
+                                          <ul role="menu" class="sub-menu">
+                                              
+                          <li><a href="/historialpay">Historial de Compras</a></li> 
+                          <li><a href="/updateuser">Configurar Cuenta</a></li> 
+                                          </ul>
+                      </li> 
                     </ul>
                   </div>
                 </div>
@@ -172,6 +189,7 @@ class App extends React.Component
             </div>
           </div>
         </header>
+        
                         <Switch >
                           <div id="sportswear" class="panel ">
                           <Route path="/contacto" component={Booking}>
@@ -184,7 +202,18 @@ class App extends React.Component
                           <Route path="/nosotros" component={NosotrosL}>
                             <NosotrosL/>
                           </Route>
-                          
+                          <Route path="/checkout" component={Check}>
+                            <Check/>
+                          </Route>
+                          <Route path="/congratulation" component={Congra}>
+                            <Congra/>
+                          </Route>
+                          <Route path="/updateuser" component={UpUs}>
+                            <UpUs/>
+                          </Route>
+                          <Route path="/historialpay" component={HPay}>
+                            <HPay/>
+                          </Route>
                         </Switch>
                         
                         
@@ -257,7 +286,9 @@ class App extends React.Component
         </section>
    */}       
    {/*---------------------------------------Menus----------------------------------------------------------------------*/}
-
+   <Route exact path='/PlaceOrder' component={PlaceOrder} />
+   <Route exact path='/CartPrice' component={CartPrice} />   
+<Route exact path='/ForgetPassword' component={FPass} />
 <Route exact path='/' component={Home} />
    {/*-------------------------------------------------------------------------------------------------------------*/}
         
